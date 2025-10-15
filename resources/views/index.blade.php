@@ -25,7 +25,7 @@
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 
- 
+
 </head>
 
 <body>
@@ -38,10 +38,10 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="" style="    width: 115px;">
+                    <img src="images/logo.png" alt="" style="    width: 115px;">
                 </a>
 
- 
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -64,7 +64,7 @@
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_4">Map</a>
                         </li>
-                               <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_5">FAQ’S</a>
                         </li>
 
@@ -84,12 +84,12 @@
                 <div class="row  ">
 
                     <div class="col-12 mt-auto mb-5 text-center">
- 
+
                         <h1 class="text-white mb-5">Sonic towing & Recovery</h1>
 
                         <a class="btn custom-btn smoothscroll" href="tel:+13312333327">
 
-                            <i class="bi bi-telephone-plus skill-icon bounce" style="font-size: 25px"> Call us know</i>
+                            <i class="bi bi-telephone-plus skill-icon bounce" style="font-size: 25px"> Call us now</i>
 
                         </a>
                     </div>
@@ -194,7 +194,7 @@
                 </div>
             </div>
         </section>
- 
+
 
         <!-- Services Section -->
         <section class="services-section section-padding bg-light" id="section_3">
@@ -334,7 +334,7 @@
 
 
 
-              <section class="pricing-section section-padding section-bg" id="section_5">
+        <section class="pricing-section section-padding section-bg" id="section_5">
             <div class="container">
                 <div class="row">
 
@@ -499,14 +499,14 @@
                     <h5 class="site-footer-title mb-3">Have a question?</h5>
 
                     <p class="text-white d-flex mb-1">
-                        <a href="tel:+1+13312333327" class="site-footer-link">
+                        <a href="tel:+13312333327" class="site-footer-link">
                             +1-331-233-3327
                         </a>
                     </p>
 
                     <p class="text-white d-flex">
-                        <a href="mailto:" class="site-footer-link">
-                            hello@company.com
+                        <a href="mailto:Sonictowingandrecovery@gmail.com" class="site-footer-link">
+                            Sonictowingandrecovery@gmail.com
                         </a>
                     </p>
                 </div>
@@ -537,15 +537,15 @@
             <div class="container">
                 <div class="row">
 
-                
+
 
                     <div class="col-lg-8 col-12 mt-lg-5">
                         <ul class="site-footer-links">
-                     <img src="images/logo.png" alt="" style="    width: 125px;">
+                            <img src="images/logo.png" alt="" style="    width: 125px;">
                         </ul>
                     </div>
 
-                        <div class="col-lg-3 col-12 mt-5">
+                    <div class="col-lg-3 col-12 mt-5">
                         <p class="copyright-text">Copyright © 2026 Sonic towing & Recovery</p>
                         <p class="copyright-text">Development by: <a class="link-fx-1 color-contrast-higher"
                                 href="https://github.com/Sami-AL-njadat">SAM95NJT
@@ -560,7 +560,7 @@
                             </a>
                         </p>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
