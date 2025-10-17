@@ -4,11 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Sonic Towing & Recovery offers fast and reliable towing services across Chicago — including Wicker Park, Logan Square, Lincoln Park, and Downtown. Whether your car breaks down, you need roadside assistance, or heavy-duty towing, call us anytime at +1 (331) 233-3327 for professional recovery and transport services.">
+    <meta name="author" content="Sonic Towing & Recovery">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('./images/logo.ico') }}">
 
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <title>Sonic towing & Recovery</title>
+
+
+
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,8 +42,8 @@
 
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/logo.png" alt="" style="    width: 115px;">
+                <a class="navbar-brand" href="{{ route('index') }}">
+                    <img src="{{asset('images/logo.webp')}}" alt="" style="    width: 115px;">
                 </a>
 
 
@@ -175,7 +180,7 @@
 
                     <div class="col-lg-6 col-12" data-aos="flip-left" data-aos-delay="20000">
                         <div class="about-text-wrap">
-                            <img src="{{ './images/artists/new.png' }}" class="about-image img-fluid"
+                            <img src="{{ asset('./images/artists/new.webp') }}" class="about-image img-fluid"
                                 alt="Sonic Towing & Recovery Vehicle">
 
                             <div class="about-text-info d-flex">
@@ -541,7 +546,7 @@
 
                     <div class="col-lg-8 col-12 mt-lg-5">
                         <ul class="site-footer-links">
-                            <img src="images/logo.png" alt="" style="    width: 125px;">
+                            <img src="{{asset('images/logo.webp')}}" alt="" style="    width: 125px;">
                         </ul>
                     </div>
 
