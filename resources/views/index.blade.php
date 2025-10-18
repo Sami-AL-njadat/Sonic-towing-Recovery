@@ -7,6 +7,7 @@
     <meta name="description"
         content="Sonic Towing & Recovery offers fast and reliable towing services across Chicago — including Wicker Park, Logan Square, Lincoln Park, and Downtown. Whether your car breaks down, you need roadside assistance, or heavy-duty towing, call us anytime at +1 (331) 233-3327 for professional recovery and transport services.">
     <meta name="author" content="Sonic Towing & Recovery">
+
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('./images/logo.ico') }}">
 
 
@@ -43,7 +44,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('index') }}">
-                    <img src="{{asset('images/logo.webp')}}" alt="" style="    width: 115px;">
+                    <img src="{{ asset('images/logo.webp') }}" alt="" style="    width: 115px;">
                 </a>
 
 
@@ -103,7 +104,10 @@
                         <div class="date-wrap ">
                             <h5 class="text-white">
                                 <i class="custom-icon bi-clock me-2"></i>
-                                {{ $currentDateTime->format('jS M Y, h:i A') }}
+                                @isset($currentDateTime)
+                                    {{ $currentDateTime->format('jS M Y, h:i A') }}
+                                @endisset
+
                             </h5>
                         </div>
 
@@ -281,7 +285,8 @@
 
                     <div class="col-lg-4 col-md-6 col-12" data-aos="zoom-in" data-aos-delay="600">
                         <div class="service-card p-4 text-center shadow-lg rounded-4 bg-white h-100">
-                            <h4 class="fw-bold mb-3 text-primary">Decking / Undecking</h4>
+                            <h4 class="fw-bold mb-3 text-primary"> Decking / Undecking</h4>
+                            <span class="service-icon icon-2"></span>
                             <ul class="text-muted text-start">
                                 <li>Heavy Duty Towing</li>
                                 <li>Recovery Services</li>
@@ -294,6 +299,9 @@
 
                 </div>
             </div>
+
+
+
         </section>
 
 
@@ -416,7 +424,6 @@
                                     </div>
                                 </div>
 
-                                <!-- 4 -->
                                 <div class="accordion-item mb-3">
                                     <h2 class="accordion-header" id="faqHeading4">
                                         <button class="accordion-button collapsed" type="button"
@@ -546,7 +553,7 @@
 
                     <div class="col-lg-8 col-12 mt-lg-5">
                         <ul class="site-footer-links">
-                            <img src="{{asset('images/logo.webp')}}" alt="" style="    width: 125px;">
+                            <img src="{{ asset('images/logo.webp') }}" alt="" style="    width: 125px;">
                         </ul>
                     </div>
 
