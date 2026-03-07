@@ -1044,9 +1044,6 @@ strong {
   }
 
 
-  #preloader {
-    background-size: 60%;
-  }
 
 
   .about-text-info {
@@ -1065,20 +1062,29 @@ strong {
   }
 
 
-  #preloader {
-    background-size: 70% !important;
+  #preloader video {
+    width: 70% !important;
   }
 }
 
 
 
 #preloader {
-  height: 100vh;
-  width: 100%;
-  z-index: 100;
-  background: #000 url('../images/artists/b.gif') no-repeat center center;
-  background-size: 20%;
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#preloader video {
+  width: 20%;
+  height: auto;
 }
 
 

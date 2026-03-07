@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
-        content="Sonic Towing & Recovery offers fast and reliable towing services across Chicago — including Wicker Park, Logan Square, Lincoln Park, and Downtown. Whether your car breaks down, you need roadside assistance, or heavy-duty towing, call us anytime at +1 (331) 233-3327 for professional recovery and transport services.">
+        content="Sonic Towing & Recovery offers fast and reliable towing services across Chicago — including Wicker Park, Logan Square, Lincoln Park, and Downtown. Whether your car breaks down, you need roadside assistance, or heavy-duty towing, call us anytime at +1 (331) 341-4878 for professional recovery and transport services.">
     <meta name="author" content="Sonic Towing & Recovery">
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('./images/logo.ico') }}">
@@ -17,18 +17,19 @@
 
 
     <!-- CSS FILES -->
+    <!-- 1. تحسين تحميل الخطوط -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-icons.css') }}" rel="stylesheet">
 
-    <link href="css/bootstrap-icons.css" rel="stylesheet">
+     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    <link href="css/templatemo-festava-live.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+     <link href="{{ asset('css/templatemo-festava-live.css') }}" rel="stylesheet">
+
 
 
 
@@ -36,7 +37,14 @@
 
 <body>
 
-    <div id="preloader"></div>
+  
+<div id="preloader">
+  <video autoplay muted loop playsinline>
+    <source src="{{asset('images/artists/b.webm')}}" type="video/webm">
+  </video>
+</div>
+
+
     <button id="scrollTopBtn" title="Go to top">↑</button>
 
     <main>
@@ -44,7 +52,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('index') }}">
-                    <img src="{{ asset('images/logo.webp') }}" alt="" style="    width: 115px;">
+                    <img src="{{ asset('images/logo.webp') }}" alt="" style="width: 115px;" loading="lazy">
                 </a>
 
 
@@ -93,7 +101,7 @@
 
                         <h1 class="text-white mb-5">Sonic towing & Recovery</h1>
 
-                        <a class="btn custom-btn smoothscroll" href="tel:+13312333327">
+                        <a class="btn custom-btn smoothscroll" href="tel:++13313414878">
 
                             <i class="bi bi-telephone-plus skill-icon bounce" style="font-size: 25px"> Call us now</i>
 
@@ -107,6 +115,7 @@
                                 @isset($currentDateTime)
                                     {{ $currentDateTime->format('jS M Y, h:i A') }}
                                 @endisset
+
 
                             </h5>
                         </div>
@@ -145,20 +154,13 @@
                 </div>
             </div>
 
-            {{-- <div class="video-wrap">
-                <video autoplay="" loop="" muted="" class="custom-video" poster="">
-                    <source src="video/pexels-2022395.mp4" type="video/mp4">
-
-                    Your browser does not support the video tag.
-                </video>
-            </div> --}}
 
 
 
             <div class="video-wrap">
                 <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="custom-video"
                     poster="">
-                    <source src="video/pexels-2022395.mp4" type="video/mp4" />
+                    <source src="video/pexels-2022395.webm" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -196,7 +198,7 @@
                     <div class="col-lg-6 col-12" data-aos="flip-left" data-aos-delay="20000">
                         <div class="about-text-wrap">
                             <img src="{{ asset('./images/artists/new.webp') }}" class="about-image img-fluid"
-                                alt="Sonic Towing & Recovery Vehicle">
+                                alt="Sonic Towing & Recovery Vehicle" loading="lazy">
 
                             <div class="about-text-info d-flex">
                                 <div class="d-flex">
@@ -496,22 +498,22 @@
 
                     <ul class="site-footer-links">
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Home</a>
+                            <a href="#section_1" class="site-footer-link click-scroll">Home</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">About</a>
+                            <a href="#section_2" class="site-footer-link click-scroll">About</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Services</a>
+                            <a href="#section_3" class="site-footer-link click-scroll">Services</a>
                         </li>
                         <li class="site-footer-link-item">
-                            <a href="#section_4" class="site-footer-link">Map</a>
+                            <a href="#section_4" class="site-footer-link click-scroll">Map</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#section_5" class="site-footer-link">FAQ’S</a>
+                            <a href="#section_5" class="site-footer-link click-scroll">FAQ’S</a>
                         </li>
 
 
@@ -522,8 +524,8 @@
                     <h5 class="site-footer-title mb-3">Have a question?</h5>
 
                     <p class="text-white d-flex mb-1">
-                        <a href="tel:+13312333327" class="site-footer-link">
-                            +1-331-233-3327
+                        <a href="tel:+13313414878" class="site-footer-link">
+                            +1-331-341-4878
                         </a>
                     </p>
 
@@ -564,7 +566,8 @@
 
                     <div class="col-lg-8 col-12 mt-lg-5">
                         <ul class="site-footer-links">
-                            <img src="{{ asset('images/logo.webp') }}" alt="" style="    width: 125px;">
+                            <img src="{{ asset('images/logo.webp') }}" alt="" style="width: 125px;"
+                            loading="lazy">
                         </ul>
                     </div>
 
@@ -595,18 +598,24 @@ T e m p l a t e M o
 
 -->
 
-    <!-- JAVASCRIPT FILES -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/click-scroll.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/preload.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- ================= JAVASCRIPT FILES ================= -->
+    <script src="{{ asset('js/jquery.min.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.sticky.js') }}" defer></script>
+    <script src="{{ asset('js/click-scroll.js') }}" defer></script>
+    <script src="{{ asset('js/custom.js') }}" defer></script>
+    <script src="{{ asset('js/preload.js') }}" defer></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+
     <script>
-        AOS.init({
-            duration: 1500,
-            once: true,
+        document.addEventListener("DOMContentLoaded", () => {
+            AOS.init({
+                duration: 1500,
+                once: true,
+            });
         });
     </script>
 
