@@ -101,7 +101,7 @@
 
                         <h1 class="text-white mb-5">Sonic towing & Recovery</h1>
 
-                        <a class="btn custom-btn smoothscroll" href="tel:++13313414878">
+                        <a class="btn custom-btn smoothscroll" href="tel:+13313414878">
 
                             <i class="bi bi-telephone-plus skill-icon bounce" style="font-size: 25px"> Call us now</i>
 
