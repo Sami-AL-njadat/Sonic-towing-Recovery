@@ -4,15 +4,72 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ✅ Title محسّن -->
+    <title>Towing Service Chicago | Sonic Towing & Recovery | 24/7 | (331) 341-4878</title>
+
+    <!-- ✅ Description محسّن -->
     <meta name="description"
-        content="Sonic Towing & Recovery offers fast and reliable towing services across Chicago — including Wicker Park, Logan Square, Lincoln Park, and Downtown. Whether your car breaks down, you need roadside assistance, or heavy-duty towing, call us anytime at +1 (331) 341-4878 for professional recovery and transport services.">
-    <meta name="author" content="Sonic Towing & Recovery">
+        content="Chicago's trusted towing company. 
+    24/7 emergency towing in Elmhurst, Naperville, Lombard, Wheaton & all Chicago suburbs. 
+    Heavy & light duty towing. Call (331) 341-4878 — 30 min response!">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('./images/logo.ico') }}">
+    <!-- ✅ Canonical URL -->
+    <link rel="canonical" href="https://www.sonic-towing.com/">
 
+    <!-- ✅ Open Graph (للسوشيال ميديا وGoogle) -->
+    <meta property="og:title" content="Sonic Towing & Recovery | Chicago Towing 24/7">
+    <meta property="og:description" content="Fast towing across Chicago & suburbs. Call now: (331) 341-4878">
+    <meta property="og:url" content="https://www.sonic-towing.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.sonic-towing.com/images/logo.webp">
 
-    <title>Sonic towing & Recovery</title>
-
+    <!-- ✅ Schema LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutomobileTowingService",
+      "name": "Sonic Towing & Recovery",
+      "url": "https://www.sonic-towing.com",
+      "logo": "https://www.sonic-towing.com/images/logo.webp",
+      "image": "https://www.sonic-towing.com/images/artists/new.webp",
+      "telephone": "+13313414878",
+      "email": "Sonictowingandrecovery@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "627 N York St, Unit 130",
+        "addressLocality": "Elmhurst",
+        "addressRegion": "IL",
+        "postalCode": "60126",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.9179344,
+        "longitude": -87.9393205
+      },
+      "openingHours": "Mo-Su 00:00-23:59",
+      "priceRange": "$$",
+      "areaServed": [
+        {"@type": "City", "name": "Chicago"},
+        {"@type": "City", "name": "Elmhurst"},
+        {"@type": "City", "name": "Lombard"},
+        {"@type": "City", "name": "Carol Stream"},
+        {"@type": "City", "name": "Wheaton"},
+        {"@type": "City", "name": "Naperville"},
+        {"@type": "City", "name": "Downers Grove"},
+        {"@type": "City", "name": "Addison"},
+        {"@type": "City", "name": "Bloomingdale"},
+        {"@type": "City", "name": "Villa Park"},
+        {"@type": "City", "name": "Lisle"},
+        {"@type": "City", "name": "West Chicago"},
+        {"@type": "City", "name": "Glendale Heights"}
+      ],
+      "sameAs": [
+        "https://maps.app.goo.gl/UxUQ5mqyGfdGYw6t9"
+      ]
+    }
+    </script>
 
 
 
@@ -21,14 +78,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
 
-     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-icons.css') }}" rel="stylesheet">
 
-     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-     <link href="{{ asset('css/templatemo-festava-live.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/templatemo-festava-live.css') }}" rel="stylesheet">
 
 
 
@@ -37,12 +94,12 @@
 
 <body>
 
-  
-<div id="preloader">
-  <video autoplay muted loop playsinline>
-    <source src="{{asset('images/artists/b.webm')}}" type="video/webm">
-  </video>
-</div>
+
+    <div id="preloader">
+        <video autoplay muted loop playsinline>
+            <source src="{{ asset('images/artists/b.webm') }}" type="video/webm">
+        </video>
+    </div>
 
 
     <button id="scrollTopBtn" title="Go to top">↑</button>
@@ -567,7 +624,7 @@
                     <div class="col-lg-8 col-12 mt-lg-5">
                         <ul class="site-footer-links">
                             <img src="{{ asset('images/logo.webp') }}" alt="" style="width: 125px;"
-                            loading="lazy">
+                                loading="lazy">
                         </ul>
                     </div>
 
