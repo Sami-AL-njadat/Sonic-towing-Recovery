@@ -191,6 +191,7 @@
                     <video autoplay muted loop playsinline preload="metadata"
                         class="custom-video sonic-hero-video sonic-hero-video--desktop    "
                         poster="{{ asset('images/chicago-towing-sonic2.webp') }}">
+                        <source src="{{ asset('video/big-screen.mp4') }}" type="video/mp4">
                         <source src="{{ asset('video/big-screen.webm') }}" type="video/webm">
                     </video>
                 </div>
