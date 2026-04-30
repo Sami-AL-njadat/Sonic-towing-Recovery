@@ -3,10 +3,15 @@
 
 var sectionArray = [1, 2, 3, 4, 5];
 
+function sonicNavScrollOffset() {
+    var h = $(".navbar").outerHeight();
+    return (typeof h === "number" ? h : 72) + 16;
+}
+
 $.each(sectionArray, function(index, value){
           
      $(document).scroll(function(){
-         var offsetSection = $('#' + 'section_' + value).offset().top - 83;
+         var offsetSection = $('#' + 'section_' + value).offset().top - sonicNavScrollOffset();
          var docScroll = $(document).scrollTop();
          var docScroll1 = docScroll + 1;
          
@@ -21,7 +26,7 @@ $.each(sectionArray, function(index, value){
      });
     
     $('.click-scroll').eq(index).click(function(e){
-        var offsetClick = $('#' + 'section_' + value).offset().top - 83;
+        var offsetClick = $('#' + 'section_' + value).offset().top - sonicNavScrollOffset();
         e.preventDefault();
         $('html, body').animate({
             'scrollTop':offsetClick

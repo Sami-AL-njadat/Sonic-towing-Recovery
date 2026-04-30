@@ -15,60 +15,65 @@
     Heavy & light duty towing. Call (331) 341-4878 — 30 min response!">
 
     <!-- ✅ Canonical URL -->
-    <link rel="canonical" href="https://www.sonic-towing.com/">
+    <link rel="canonical" href="{{ url('/') }}/">
+
+    <!-- ✅ Site icons (tab + mobile home screen) -->
+    <link rel="icon" href="{{ asset('images/logo.webp') }}" type="image/webp">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo.webp') }}">
+    <meta name="theme-color" content="#0f172a">
 
     <!-- ✅ Open Graph (للسوشيال ميديا وGoogle) -->
     <meta property="og:title" content="Sonic Towing & Recovery | Chicago Towing 24/7">
     <meta property="og:description" content="Fast towing across Chicago & suburbs. Call now: (331) 341-4878">
-    <meta property="og:url" content="https://www.sonic-towing.com/">
+    <meta property="og:url" content="{{ url('/') }}/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.sonic-towing.com/images/logo.webp">
+    <meta property="og:image" content="{{ asset('images/logo.webp') }}">
 
     <!-- ✅ Schema LocalBusiness -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AutomobileTowingService",
-      "name": "Sonic Towing & Recovery",
-      "url": "https://www.sonic-towing.com",
-      "logo": "https://www.sonic-towing.com/images/logo.webp",
-      "image": "https://www.sonic-towing.com/images/artists/new.webp",
-      "telephone": "+13313414878",
-      "email": "Sonictowingandrecovery@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "627 N York St, Unit 130",
-        "addressLocality": "Elmhurst",
-        "addressRegion": "IL",
-        "postalCode": "60126",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 41.9179344,
-        "longitude": -87.9393205
-      },
-      "openingHours": "Mo-Su 00:00-23:59",
-      "priceRange": "$$",
-      "areaServed": [
-        {"@type": "City", "name": "Chicago"},
-        {"@type": "City", "name": "Elmhurst"},
-        {"@type": "City", "name": "Lombard"},
-        {"@type": "City", "name": "Carol Stream"},
-        {"@type": "City", "name": "Wheaton"},
-        {"@type": "City", "name": "Naperville"},
-        {"@type": "City", "name": "Downers Grove"},
-        {"@type": "City", "name": "Addison"},
-        {"@type": "City", "name": "Bloomingdale"},
-        {"@type": "City", "name": "Villa Park"},
-        {"@type": "City", "name": "Lisle"},
-        {"@type": "City", "name": "West Chicago"},
-        {"@type": "City", "name": "Glendale Heights"}
+    {!! json_encode([
+      '@context' => 'https://schema.org',
+      '@type' => 'AutomobileTowingService',
+      'name' => 'Sonic Towing & Recovery',
+      'url' => url('/'),
+      'logo' => asset('images/logo.webp'),
+      'image' => asset('images/artists/new.webp'),
+      'telephone' => '+13313414878',
+      'email' => 'Sonictowingandrecovery@gmail.com',
+      'address' => [
+        '@type' => 'PostalAddress',
+        'streetAddress' => '627 N York St, Unit 130',
+        'addressLocality' => 'Elmhurst',
+        'addressRegion' => 'IL',
+        'postalCode' => '60126',
+        'addressCountry' => 'US',
       ],
-      "sameAs": [
-        "https://maps.app.goo.gl/UxUQ5mqyGfdGYw6t9"
-      ]
-    }
+      'geo' => [
+        '@type' => 'GeoCoordinates',
+        'latitude' => 41.9179344,
+        'longitude' => -87.9393205,
+      ],
+      'openingHours' => 'Mo-Su 00:00-23:59',
+      'priceRange' => '$$',
+      'areaServed' => [
+        ['@type' => 'City', 'name' => 'Chicago'],
+        ['@type' => 'City', 'name' => 'Elmhurst'],
+        ['@type' => 'City', 'name' => 'Lombard'],
+        ['@type' => 'City', 'name' => 'Carol Stream'],
+        ['@type' => 'City', 'name' => 'Wheaton'],
+        ['@type' => 'City', 'name' => 'Naperville'],
+        ['@type' => 'City', 'name' => 'Downers Grove'],
+        ['@type' => 'City', 'name' => 'Addison'],
+        ['@type' => 'City', 'name' => 'Bloomingdale'],
+        ['@type' => 'City', 'name' => 'Villa Park'],
+        ['@type' => 'City', 'name' => 'Lisle'],
+        ['@type' => 'City', 'name' => 'West Chicago'],
+        ['@type' => 'City', 'name' => 'Glendale Heights'],
+      ],
+      'sameAs' => [
+        'https://maps.app.goo.gl/UxUQ5mqyGfdGYw6t9',
+      ],
+    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
     </script>
 
 
@@ -78,7 +83,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-icons.css') }}" rel="stylesheet">
@@ -95,10 +102,19 @@
 <body>
 
 
-    <div id="preloader">
-        <video autoplay muted loop playsinline>
-            <source src="{{ asset('images/artists/b.webm') }}" type="video/webm">
-        </video>
+    <div id="preloader" class="sonic-preloader" aria-busy="true" aria-live="polite" data-enabled="1" data-hide-on="load"
+        data-min-visible-ms="250" data-remove-delay-ms="650">
+        <div class="sonic-preloader__media">
+            <img class="sonic-preloader__img" src="{{ asset('images/chicago-towing-sonic2.webp') }}" alt=""
+                width="1440" height="810" fetchpriority="high" decoding="async">
+        </div>
+        <div class="sonic-preloader__scrim" aria-hidden="true"></div>
+        <div class="sonic-preloader__content">
+            <img class="sonic-preloader__logo" src="{{ asset('images/logo.webp') }}" alt="Sonic Towing & Recovery"
+                width="132" height="48">
+            <div class="sonic-preloader__spinner" aria-hidden="true"></div>
+            <p class="sonic-preloader__sub">Loading…</p>
+        </div>
     </div>
 
 
@@ -109,7 +125,8 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('index') }}">
-                    <img src="{{ asset('images/logo.webp') }}" alt="" style="width: 115px;" loading="lazy">
+                    <img src="{{ asset('images/logo.webp') }}" alt="Sonic Towing & Recovery" width="115"
+                        style="width: 115px; height: auto;" fetchpriority="high">
                 </a>
 
 
@@ -121,107 +138,129 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5 linksnav">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">Home</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">About</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">Services</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">Map</a>
+                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_1">
+                                <i class="bi bi-house-door-fill nav-link-icon" aria-hidden="true"></i><span>Home</span>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_5">FAQ’S</a>
+                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_2">
+                                <i class="bi bi-info-circle-fill nav-link-icon"
+                                    aria-hidden="true"></i><span>About</span>
+                            </a>
                         </li>
-
-
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_3">
+                                <i class="bi bi-grid-1x2-fill nav-link-icon"
+                                    aria-hidden="true"></i><span>Services</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_4">
+                                <i class="bi bi-geo-alt-fill nav-link-icon" aria-hidden="true"></i><span>Map</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_5">
+                                <i class="bi bi-question-circle-fill nav-link-icon"
+                                    aria-hidden="true"></i><span>FAQ’s</span>
+                            </a>
+                        </li>
                     </ul>
 
-                    <a href="#" class="btn custom-btn d-lg-block d-none"></a>
+                    <a href="tel:+13313414878"
+                        class="btn custom-btn d-lg-inline-flex d-none align-items-center gap-2">
+                        <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                        <span>Call us now</span>
+                    </a>
                 </div>
             </div>
         </nav>
 
 
-        <section class="hero-section" id="section_1">
-            <div class="section-overlay"></div>
+        <section class="hero-section sonic-hero" id="section_1">
+            <div class="hero-media">
+                <div class="sonic-hero-poster" aria-hidden="true"
+                    style="background-image: url('{{ asset('images/chicago-towing-sonic2.webp') }}');"></div>
+                <div class="video-wrap" aria-hidden="true">
+                    <video autoplay muted loop playsinline preload="metadata"
+                        class="custom-video sonic-hero-video sonic-hero-video--mobile"
+                        poster="{{ asset('images/chicago-towing-sonic2.webp') }}">
+                        <source src="{{ asset('video/mobile-screen.mp4') }}" type="video/mp4">
+                    </video>
 
-            <div class="container d-flex justify-content-center align-items-center">
-                <div class="row  ">
+                    <video autoplay muted loop playsinline preload="metadata"
+                        class="custom-video sonic-hero-video sonic-hero-video--desktop    "
+                        poster="{{ asset('images/chicago-towing-sonic2.webp') }}">
+                        <source src="{{ asset('video/big-screen.mp4') }}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="section-overlay sonic-hero-overlay"></div>
+            </div>
 
-                    <div class="col-12 mt-auto mb-5 text-center">
+            <div class="container hero-content">
+                <div class="hero-main">
+                    <p class="hero-eyebrow text-white text-uppercase small fw-semibold mb-2 mb-lg-3">Industrial towing
+                        &amp; recovery</p>
+                    <h1 class="text-white mb-3 mb-lg-4 hero-headline">Sonic Towing & Recovery</h1>
+                    {{-- <p class="text-white mb-4 mx-auto hero-lead px-2 hero-lead-copy">24/7 emergency towing and recovery
+                        across Chicago and the western suburbs. Fast dispatch — call for immediate service.</p> --}}
 
-                        <h1 class="text-white mb-5">Sonic towing & Recovery</h1>
-
-                        <a class="btn custom-btn smoothscroll" href="tel:+13313414878">
-
-                            <i class="bi bi-telephone-plus skill-icon bounce" style="font-size: 25px"> Call us now</i>
-
+                    <div
+                        class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center px-2 pb-1">
+                        <a class="btn custom-btn d-inline-flex align-items-center" href="tel:+13313414878">
+                            <i class="bi bi-telephone-fill me-2" aria-hidden="true"></i>
+                            +1-331-341-4878
                         </a>
+
                     </div>
+                </div>
 
-                    <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center  ">
-                        <div class="date-wrap ">
-                            <h5 class="text-white">
-                                <i class="custom-icon bi-clock me-2"></i>
-                                @isset($currentDateTime)
-                                    {{ $currentDateTime->format('jS M Y, h:i A') }}
-                                @endisset
-
-
-                            </h5>
+                <div class="hero-footer-bar">
+                    <div
+                        class="hero-footer-inner row align-items-center justify-content-center text-center g-3 g-lg-4">
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <div class="hero-stat">
+                                <i class="bi bi-clock-fill hero-stat-icon" aria-hidden="true"></i>
+                                <h5 class="text-white mb-0 hero-stat-label">
+                                    @isset($currentDateTime)
+                                        <span class="d-block">{{ $currentDateTime->format('jS M Y') }}</span>
+                                        <span
+                                            class="d-block small fw-normal mt-1 hero-stat-muted">{{ $currentDateTime->format('h:i A') }}</span>
+                                    @endisset
+                                </h5>
+                            </div>
                         </div>
-
-                        <div class="location-wrap mx-auto py-3 py-lg-0">
-                            <h5 class="text-white">
-                                <i class="custom-icon bi-geo-alt me-2"></i>
-                                Chicago, United States
-                            </h5>
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <div class="hero-stat">
+                                <i class="bi bi-geo-alt-fill hero-stat-icon" aria-hidden="true"></i>
+                                <h5 class="text-white mb-0 hero-stat-label">
+                                    <span class="d-block">Chicago, IL</span>
+                                    <span class="d-block small fw-normal mt-1 hero-stat-muted">United States</span>
+                                </h5>
+                            </div>
                         </div>
-
-                        <div class="social-share ">
-                            <ul class="social-icon d-flex align-items-center justify-content-center">
-                                <span class="text-white me-3">Share:</span>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link">
-                                        <span class="bi-facebook"></span>
-                                    </a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link">
-                                        <span class="bi-twitter"></span>
-                                    </a>
-                                </li>
-
-                                <li class="social-icon-item">
-                                    <a href="#" class="social-icon-link">
-                                        <span class="bi-instagram"></span>
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <div class="hero-stat hero-stat--share justify-content-center">
+                                <span class="text-white small text-uppercase fw-semibold hero-share-label">Share</span>
+                                <ul class="social-icon d-flex align-items-center justify-content-center mb-0 ps-0">
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link" aria-label="Facebook"><span
+                                                class="bi bi-facebook" aria-hidden="true"></span></a>
+                                    </li>
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link" aria-label="Twitter"><span
+                                                class="bi bi-twitter" aria-hidden="true"></span></a>
+                                    </li>
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link" aria-label="Instagram"><span
+                                                class="bi bi-instagram" aria-hidden="true"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-            <div class="video-wrap">
-                <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="custom-video"
-                    poster="">
-                    <source src="video/pexels-2022395.webm" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
         </section>
 
 
@@ -274,14 +313,73 @@
             </div>
         </section>
 
-
-        <!-- Services Section -->
-        <section class="services-section section-padding bg-light" id="section_3">
+        {{-- gallary section --}}
+        <section class="gallary-section section-padding sonic-section-tint" id="section_gallery">
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-12 text-center">
-                        <h2 class="mb-4 fw-bold">Our Professional Towing Services</h2>
-                        <h6 class="text-muted">Reliable. Fast. 24/7 Assistance — We’ve got you covered anytime,
+                        <div class="d-inline-flex align-items-center justify-content-center gap-2 mb-3 text-primary">
+                            <i class="bi bi-images fs-3" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="mb-3 fw-bold">Gallery</h2>
+                        <h6 class="text-muted mb-0">Some of our work across Chicago and suburbs.</h6>
+                    </div>
+                </div>
+
+                <div class="sonic-gallery" data-gallery>
+                    @php
+                        $galleryImages = [
+                            'images/images-gallary/chicago-towing-sonic22.png',
+                            'images/images-gallary/chicago-towing-sonic.png',
+                            'images/images-gallary/towing-chicago-towing-sonic.png',
+                            'images/images-gallary/towing-chicago.jpg',
+                            'images/images-gallary/chicago2.jpg',
+                            'images/images-gallary/chicago-towing.jpg',
+                            'images/images-gallary/chicago-towing.png',
+                            'images/images-gallary/chicago.jpg',
+                        ];
+                    @endphp
+
+                    @foreach ($galleryImages as $img)
+                        <button class="sonic-gallery__item" type="button" data-gallery-item
+                            data-src="{{ asset($img) }}" aria-label="Open image">
+                            <img class="sonic-gallery__img" src="{{ asset($img) }}"
+                                alt="Sonic Towing gallery image" loading="lazy" decoding="async">
+                        </button>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="sonic-lightbox" data-lightbox hidden>
+                <div class="sonic-lightbox__backdrop" data-lightbox-close></div>
+                <div class="sonic-lightbox__panel" role="dialog" aria-modal="true" aria-label="Gallery viewer">
+                    <button class="sonic-lightbox__close" type="button" data-lightbox-close aria-label="Close">
+                        <i class="bi bi-x-lg" aria-hidden="true"></i>
+                    </button>
+                    <button class="sonic-lightbox__nav sonic-lightbox__nav--prev" type="button" data-lightbox-prev
+                        aria-label="Previous">
+                        <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <img class="sonic-lightbox__img" data-lightbox-img alt="">
+                    <button class="sonic-lightbox__nav sonic-lightbox__nav--next" type="button" data-lightbox-next
+                        aria-label="Next">
+                        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        {{-- gallary section --}}
+
+        <!-- Services Section -->
+        <section class="services-section section-padding sonic-section-tint" id="section_3">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-12 text-center">
+                        <div class="d-inline-flex align-items-center justify-content-center gap-2 mb-3 text-primary">
+                            <i class="bi bi-wrench-adjustable-circle-fill fs-3" aria-hidden="true"></i>
+                        </div>
+                        <h2 class="mb-3 fw-bold">Our Professional Towing Services</h2>
+                        <h6 class="text-muted mb-0">Reliable. Fast. 24/7 Assistance — We’ve got you covered anytime,
                             anywhere.</h6>
                     </div>
                 </div>
@@ -290,7 +388,9 @@
 
                     <!-- Service Card -->
                     <div class="col-lg-4 col-md-6 col-12" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="service-card p-4 text-center shadow-lg rounded-4 bg-white h-100">
+                        <div class="service-card p-4 text-center shadow-sm border bg-white h-100 rounded-3">
+                            <div class="service-card-icon" aria-hidden="true"><i class="bi bi-truck-flatbed"></i>
+                            </div>
                             <h4 class="fw-bold mb-3 text-primary">Heavy Duty Towing & Recovery</h4>
                             <ul class="text-muted text-start">
                                 <li>50, 60 & 70 Ton Rotators in Fleet</li>
@@ -303,7 +403,9 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-12" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="service-card p-4 text-center shadow-lg rounded-4 bg-white h-100">
+                        <div class="service-card p-4 text-center shadow-sm border bg-white h-100 rounded-3">
+                            <div class="service-card-icon" aria-hidden="true"><i class="bi bi-truck-front-fill"></i>
+                            </div>
                             <h4 class="fw-bold mb-3 text-primary">Medium Duty Towing</h4>
                             <ul class="text-muted text-start">
                                 <li>High-End, Powerful Tow Trucks</li>
@@ -316,7 +418,9 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-12" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="service-card p-4 text-center shadow-lg rounded-4 bg-white h-100">
+                        <div class="service-card p-4 text-center shadow-sm border bg-white h-100 rounded-3">
+                            <div class="service-card-icon" aria-hidden="true"><i class="bi bi-wrench-adjustable"></i>
+                            </div>
                             <h4 class="fw-bold mb-3 text-primary">24/7 Light Duty Roadside Assistance</h4>
                             <ul class="text-muted text-start">
                                 <li>Late Model Tow Trucks</li>
@@ -329,7 +433,9 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-12" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="service-card p-4 text-center shadow-lg rounded-4 bg-white h-100">
+                        <div class="service-card p-4 text-center shadow-sm border bg-white h-100 rounded-3">
+                            <div class="service-card-icon" aria-hidden="true"><i class="bi bi-arrows-collapse"></i>
+                            </div>
                             <h4 class="fw-bold mb-3 text-primary">Load Shifts</h4>
                             <ul class="text-muted text-start">
                                 <li>Large Fleet of Heavy Tow Trucks</li>
@@ -341,7 +447,9 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-12" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="service-card p-4 text-center shadow-lg rounded-4 bg-white h-100">
+                        <div class="service-card p-4 text-center shadow-sm border bg-white h-100 rounded-3">
+                            <div class="service-card-icon" aria-hidden="true"><i class="bi bi-box-seam-fill"></i>
+                            </div>
                             <h4 class="fw-bold mb-3 text-primary">Equipment Hauling</h4>
                             <ul class="text-muted text-start">
                                 <li>Construction Equipment Hauling</li>
@@ -354,9 +462,9 @@
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-12" data-aos="zoom-in" data-aos-delay="600">
-                        <div class="service-card p-4 text-center shadow-lg rounded-4 bg-white h-100">
+                        <div class="service-card p-4 text-center shadow-sm border bg-white h-100 rounded-3">
+                            <div class="service-card-icon" aria-hidden="true"><i class="bi bi-layers-fill"></i></div>
                             <h4 class="fw-bold mb-3 text-primary"> Decking / Undecking</h4>
-                            <span class="service-icon icon-2"></span>
                             <ul class="text-muted text-start">
                                 <li>Heavy Duty Towing</li>
                                 <li>Recovery Services</li>
@@ -398,7 +506,7 @@
                             </div>
                         </nav>
 
-                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                        <div class="tab-content shadow-sm border mt-5" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-ContactMap" role="tabpanel"
                                 aria-labelledby="nav-ContactMap-tab">
                                 <iframe class="google-map"
@@ -586,7 +694,7 @@
                         </a>
                     </p>
 
-                    <p class="text-white d-flex">
+                    <p class="text-white d-flex email-footer">
                         <a href="mailto:Sonictowingandrecovery@gmail.com" class="site-footer-link">
                             Sonictowingandrecovery@gmail.com
                         </a>
@@ -623,8 +731,8 @@
 
                     <div class="col-lg-8 col-12 mt-lg-5">
                         <ul class="site-footer-links">
-                            <img src="{{ asset('images/logo.webp') }}" alt="" style="width: 125px;"
-                                loading="lazy">
+                            <img src="{{ asset('images/logo.webp') }}" alt="Sonic Towing & Recovery" width="125"
+                                style="width: 125px; height: auto;" loading="lazy">
                         </ul>
                     </div>
 
@@ -663,6 +771,7 @@ T e m p l a t e M o
     <script src="{{ asset('js/click-scroll.js') }}" defer></script>
     <script src="{{ asset('js/custom.js') }}" defer></script>
     <script src="{{ asset('js/preload.js') }}" defer></script>
+    <script src="{{ asset('js/gallery.js') }}" defer></script>
 
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
@@ -670,7 +779,7 @@ T e m p l a t e M o
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             AOS.init({
-                duration: 1500,
+                duration: 15000,
                 once: true,
             });
         });

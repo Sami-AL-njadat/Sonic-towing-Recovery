@@ -214,6 +214,7 @@
   });
 })(jQuery);
 
-$(document).ready(function(){
-      $(".navbar").sticky({topSpacing:0});
-    });
+// Sticky nav disabled: navbar uses fixed glass bar (see templatemo-festava-live.css).
+// $(document).ready(function(){
+//       $(".navbar").sticky({topSpacing:0});
+//     });
