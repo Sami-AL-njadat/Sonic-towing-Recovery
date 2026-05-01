@@ -63,66 +63,8 @@
         }
     }
 
-    // HERO VIDEO: load only the matching breakpoint video.
-    const setupHeroVideo = () => {
-        const mobileVideo = document.querySelector(".sonic-hero-video--mobile");
-        const desktopVideo = document.querySelector(".sonic-hero-video--desktop");
-        if (!mobileVideo && !desktopVideo) return;
-
-        const mql = window.matchMedia("(max-width: 767px)");
-
-        const disableVideo = (video) => {
-            if (!video) return;
-            try {
-                video.pause();
-            } catch (_) {}
-            const sources = Array.from(video.querySelectorAll("source"));
-            sources.forEach((s) => s.removeAttribute("src"));
-            video.removeAttribute("src");
-            video.load();
-        };
-
-        const enableVideo = (video) => {
-            if (!video) return;
-            const sources = Array.from(video.querySelectorAll("source"));
-            sources.forEach((s) => {
-                const original = s.getAttribute("data-src") ?? s.getAttribute("src");
-                if (!s.getAttribute("data-src") && original) s.setAttribute("data-src", original);
-                if (original && !s.getAttribute("src")) s.setAttribute("src", original);
-            });
-            video.load();
-            video.play?.().catch(() => {});
-        };
-
-        // Cache original srcs once.
-        [mobileVideo, desktopVideo].forEach((v) => {
-            if (!v) return;
-            Array.from(v.querySelectorAll("source")).forEach((s) => {
-                const src = s.getAttribute("src");
-                if (src && !s.getAttribute("data-src")) s.setAttribute("data-src", src);
-            });
-        });
-
-        const apply = () => {
-            const useMobile = mql.matches;
-            if (useMobile) {
-                disableVideo(desktopVideo);
-                enableVideo(mobileVideo);
-            } else {
-                disableVideo(mobileVideo);
-                enableVideo(desktopVideo);
-            }
-        };
-
-        apply();
-        mql.addEventListener?.("change", apply);
-    };
-
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", setupHeroVideo, { once: true });
-    } else {
-        setupHeroVideo();
-    }
+    // Hero background videos: no JS here. Visibility is CSS-only (.sonic-hero-video--mobile / --desktop).
+    // Never strip <source src> in script — it breaks Safari/mobile playback after load().
 
     const scrollBtn = document.getElementById("scrollTopBtn");
     if (scrollBtn) {
