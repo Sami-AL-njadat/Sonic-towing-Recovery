@@ -534,16 +534,6 @@ strong {
   overflow: hidden;
 }
 
-.sonic-hero-poster {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-size: cover;
-  background-position: center 40%;
-  transform: scale(1.02);
-  filter: saturate(1.05) contrast(1.02);
-}
-
 .hero-section.sonic-hero .video-wrap {
   border-radius: 0;
 }

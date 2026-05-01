@@ -63,9 +63,6 @@
         }
     }
 
-    // Hero background videos: no JS here. Visibility is CSS-only (.sonic-hero-video--mobile / --desktop).
-    // Never strip <source src> in script — it breaks Safari/mobile playback after load().
-
     const scrollBtn = document.getElementById("scrollTopBtn");
     if (scrollBtn) {
         const toggleBtn = () => {

@@ -179,20 +179,15 @@
 
         <section class="hero-section sonic-hero" id="section_1">
             <div class="hero-media">
-                <div class="sonic-hero-poster" aria-hidden="true"
-                    style="background-image: url('{{ asset('images/chicago-towing-sonic2.webp') }}');"></div>
-                {{-- Two <video> elements: CSS shows one per breakpoint. Do not strip <source src> in JS (breaks mobile). MP4 first for iOS/Safari, then WebM. --}}
                 <div class="video-wrap" aria-hidden="true">
                     <video autoplay muted loop playsinline preload="auto"
-                        class="custom-video sonic-hero-video sonic-hero-video--mobile"
-                        poster="{{ asset('images/chicago-towing-sonic2.webp') }}">
+                        class="custom-video sonic-hero-video sonic-hero-video--mobile">
                         <source src="{{ asset('video/mobile-screen.mp4') }}" type="video/mp4">
                         <source src="{{ asset('video/mobile-screen.webm') }}" type="video/webm">
                     </video>
 
                     <video autoplay muted loop playsinline preload="auto"
-                        class="custom-video sonic-hero-video sonic-hero-video--desktop"
-                        poster="{{ asset('images/chicago-towing-sonic2.webp') }}">
+                        class="custom-video sonic-hero-video sonic-hero-video--desktop">
                         <source src="{{ asset('video/big-screen.mp4') }}" type="video/mp4">
                         <source src="{{ asset('video/big-screen.webm') }}" type="video/webm">
                     </video>
