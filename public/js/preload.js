@@ -1,7 +1,31 @@
 (() => {
     const preloader = document.getElementById("preloader");
     if (preloader) {
+        const enabled = preloader.getAttribute("data-enabled") !== "0";
+        const hideOn = preloader.getAttribute("data-hide-on") || "load";
+        const minVisibleMs = Number(preloader.getAttribute("data-min-visible-ms") || "0");
+        const removeDelayMs = Number(preloader.getAttribute("data-remove-delay-ms") || "650");
+        const maxWaitMs = Number(preloader.getAttribute("data-max-wait-ms") || "6000");
+
+        const startedAt = performance.now();
+
         const hidePreloader = () => {
+            if (!enabled) {
+                try {
+                    preloader.remove();
+                } catch (_) {}
+                document.body.style.overflow = "";
+                return;
+            }
+
+            const elapsed = performance.now() - startedAt;
+            const remaining = Math.max(0, minVisibleMs - elapsed);
+
+            if (remaining > 0) {
+                window.setTimeout(hidePreloader, remaining);
+                return;
+            }
+
             preloader.classList.add("exit");
             preloader.setAttribute("aria-busy", "false");
 
@@ -9,23 +33,33 @@
                 preloader.classList.add("done");
                 document.body.style.overflow = "";
                 preloader.remove();
-            }, 1100);
+            }, Math.max(0, removeDelayMs));
         };
 
         // Hide overflow while loading
-        document.body.style.overflow = "hidden";
+        if (enabled) document.body.style.overflow = "hidden";
 
-        // Trigger on window load (all assets loaded)
-        if (document.readyState === "complete") {
-            window.setTimeout(hidePreloader, 3000);
+        // Always ensure it can't get stuck (e.g. slow networks, blocked assets).
+        const fallback = window.setTimeout(hidePreloader, Math.max(0, maxWaitMs));
+
+        const triggerHide = () => {
+            window.clearTimeout(fallback);
+            hidePreloader();
+        };
+
+        if (hideOn === "dom") {
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", triggerHide, { once: true });
+            } else {
+                triggerHide();
+            }
         } else {
-            window.addEventListener(
-                "load",
-                () => {
-                    window.setTimeout(hidePreloader, 3000);
-                },
-                { once: true }
-            );
+            // default: window load (all assets)
+            if (document.readyState === "complete") {
+                triggerHide();
+            } else {
+                window.addEventListener("load", triggerHide, { once: true });
+            }
         }
     }
 
@@ -54,9 +88,10 @@
             sources.forEach((s) => {
                 const original = s.getAttribute("data-src") ?? s.getAttribute("src");
                 if (!s.getAttribute("data-src") && original) s.setAttribute("data-src", original);
-                if (original) s.setAttribute("src", original);
+                if (original && !s.getAttribute("src")) s.setAttribute("src", original);
             });
             video.load();
+            video.play?.().catch(() => {});
         };
 
         // Cache original srcs once.
