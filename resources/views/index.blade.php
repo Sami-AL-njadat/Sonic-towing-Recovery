@@ -185,7 +185,9 @@
                     <video autoplay muted loop playsinline preload="none"
                         class="custom-video sonic-hero-video sonic-hero-video--mobile"
                         poster="{{ asset('images/chicago-towing-sonic2.webp') }}">
-                        <source data-src="{{ asset('video/mobile-screen.webm') }}" type="video/webm">
+
+                        <source src="{{ asset('video/mobile-screen.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('video/mobile-screen.webm') }}" type="video/webm">
                     </video>
 
                     <video autoplay muted loop playsinline preload="none"
@@ -203,8 +205,6 @@
                     <p class="hero-eyebrow text-white text-uppercase small fw-semibold mb-2 mb-lg-3">Industrial towing
                         &amp; recovery</p>
                     <h1 class="text-white mb-3 mb-lg-4 hero-headline">Sonic Towing & Recovery</h1>
-                    {{-- <p class="text-white mb-4 mx-auto hero-lead px-2 hero-lead-copy">24/7 emergency towing and recovery
-                        across Chicago and the western suburbs. Fast dispatch — call for immediate service.</p> --}}
 
                     <div
                         class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center px-2 pb-1">
