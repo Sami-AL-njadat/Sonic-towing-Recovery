@@ -1,7 +1,7 @@
 // Smooth scroll + active section highlighting (desktop navbar + mobile bottom nav)
 
-// Order matters for active state. Include Gallery section (section_gallery).
-var sonicSectionIds = ["section_1", "section_2", "section_3", "section_gallery", "section_4", "section_5"];
+// Order matters for active state. Numeric section IDs (Gallery is section_4).
+var sonicSectionIds = ["section_1", "section_2", "section_3", "section_4", "section_5", "section_6"];
 
 function sonicScrollOffset() {
     // On mobile/tablet we use the app topbar; on desktop the Bootstrap navbar.

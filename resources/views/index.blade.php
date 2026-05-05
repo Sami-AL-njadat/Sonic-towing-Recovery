@@ -153,7 +153,8 @@
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5 linksnav">
                         <li class="nav-item">
                             <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_1">
-                                <i class="bi bi-house-door-fill nav-link-icon" aria-hidden="true"></i><span>Home</span>
+                                <i class="bi bi-house-door-fill nav-link-icon"
+                                    aria-hidden="true"></i><span>Home</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -164,17 +165,22 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_3">
+                                <i class="bi bi-images nav-link-icon" aria-hidden="true"></i><span>Gallery</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_3">
                                 <i class="bi bi-grid-1x2-fill nav-link-icon"
                                     aria-hidden="true"></i><span>Services</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_4">
+                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_5">
                                 <i class="bi bi-geo-alt-fill nav-link-icon" aria-hidden="true"></i><span>Map</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_5">
+                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_6">
                                 <i class="bi bi-question-circle-fill nav-link-icon"
                                     aria-hidden="true"></i><span>FAQ’s</span>
                             </a>
@@ -324,7 +330,8 @@
         </section>
 
         {{-- gallary section --}}
-        <section class="gallary-section section-padding sonic-section-tint sonic-feed-block" id="section_gallery" data-feed-card>
+        <section class="gallary-section section-padding sonic-section-tint sonic-feed-block" id="section_3"
+            data-feed-card>
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-12 text-center">
@@ -381,7 +388,8 @@
         {{-- gallary section --}}
 
         <!-- Services Section -->
-        <section class="services-section section-padding sonic-section-tint sonic-feed-block" id="section_3" data-feed-card>
+        <section class="services-section section-padding sonic-section-tint sonic-feed-block" id="section_4"
+            data-feed-card>
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-12 text-center">
@@ -497,7 +505,7 @@
 
 
 
-        <section class="contact-section section-padding sonic-feed-block" id="section_4" data-feed-card>
+        <section class="contact-section section-padding sonic-feed-block" id="section_5" data-feed-card>
             <div class="container">
                 <div class="row">
 
@@ -535,7 +543,7 @@
 
 
 
-        <section class="pricing-section section-padding section-bg sonic-feed-block" id="section_5" data-feed-card>
+        <section class="pricing-section section-padding section-bg sonic-feed-block" id="section_6" data-feed-card>
             <div class="container">
                 <div class="row">
 
@@ -663,19 +671,24 @@
 
     <!-- Mobile/Tablet bottom navigation (<=1023px) -->
     <nav class="sonic-app-bottomnav" aria-label="App bottom navigation">
-        <a class="sonic-app-bottomnav__link click-scroll" href="#section_1" aria-label="Home" data-nav-target="section_1">
+        <a class="sonic-app-bottomnav__link click-scroll" href="#section_1" aria-label="Home"
+            data-nav-target="section_1">
             <i class="bi bi-house-door-fill" aria-hidden="true"></i>
         </a>
-        <a class="sonic-app-bottomnav__link click-scroll" href="#section_2" aria-label="About" data-nav-target="section_2">
+        <a class="sonic-app-bottomnav__link click-scroll" href="#section_2" aria-label="About"
+            data-nav-target="section_2">
             <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
         </a>
-        <a class="sonic-app-bottomnav__link click-scroll" href="#section_3" aria-label="Services" data-nav-target="section_3">
-            <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
-        </a>
-        <a class="sonic-app-bottomnav__link click-scroll" href="#section_gallery" aria-label="Gallery" data-nav-target="section_gallery">
+        <a class="sonic-app-bottomnav__link click-scroll" href="#section_3" aria-label="Gallery"
+            data-nav-target="section_3">
             <i class="bi bi-images" aria-hidden="true"></i>
         </a>
-        <a class="sonic-app-bottomnav__link click-scroll" href="#section_4" aria-label="Map and contact" data-nav-target="section_4">
+        <a class="sonic-app-bottomnav__link click-scroll" href="#section_4" aria-label="Services"
+            data-nav-target="section_4">
+            <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+        </a>
+        <a class="sonic-app-bottomnav__link click-scroll" href="#section_5" aria-label="Map and contact"
+            data-nav-target="section_5">
             <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
         </a>
     </nav>
@@ -700,14 +713,18 @@
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#section_3" class="site-footer-link click-scroll">Services</a>
+                            <a href="#section_3" class="site-footer-link click-scroll">Gallery</a>
                         </li>
                         <li class="site-footer-link-item">
-                            <a href="#section_4" class="site-footer-link click-scroll">Map</a>
+                            <a href="#section_4" class="site-footer-link click-scroll">Services</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#section_5" class="site-footer-link click-scroll">FAQ’S</a>
+                            <a href="#section_5" class="site-footer-link click-scroll">Map</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#section_6" class="site-footer-link click-scroll">FAQ’S</a>
                         </li>
 
 
@@ -752,7 +769,7 @@
             </div>
         </div>
 
-        <div class="site-footer-bottom">
+        <div class="site-footer-bottom ">
             <div class="container">
                 <div class="row">
 
@@ -765,7 +782,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-lg-3 col-12 mt-5">
+                    <div class="col-lg-3 col-12 mt-5 footer-copyrights ">
                         <p class="copyright-text">Copyright © 2026 Sonic towing & Recovery</p>
                         <p class="copyright-text">Development by: <a class="link-fx-1 color-contrast-higher"
                                 href="https://github.com/Sami-AL-njadat">SAM95NJT
@@ -808,7 +825,7 @@ T e m p l a t e M o
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             AOS.init({
-                duration: 800,
+                duration: 2500,
                 once: true,
             });
         });
