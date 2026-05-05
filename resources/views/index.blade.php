@@ -169,7 +169,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_3">
+                            <a class="nav-link click-scroll d-inline-flex align-items-center gap-2" href="#section_4">
                                 <i class="bi bi-grid-1x2-fill nav-link-icon"
                                     aria-hidden="true"></i><span>Services</span>
                             </a>
