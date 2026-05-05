@@ -120,9 +120,23 @@
 
     <button id="scrollTopBtn" title="Go to top">↑</button>
 
-    <main>
+    <!-- Mobile/Tablet app top bar (<=1023px) -->
+    <header class="sonic-app-topbar" aria-label="App top bar">
+        <a class="sonic-app-topbar__brand" href="{{ route('index') }}" aria-label="Sonic Towing & Recovery home">
+            <img class="sonic-app-topbar__logo" src="{{ asset('images/logo.webp') }}" alt="Sonic Towing & Recovery"
+                width="34" height="34" loading="eager" decoding="async">
+            <span class="sonic-app-topbar__title">Sonic Towing &amp; Recovery</span>
+        </a>
 
-        <nav class="navbar navbar-expand-lg">
+        <a class="sonic-app-topbar__action" href="tel:+13313414878" aria-label="Call Sonic Towing & Recovery">
+            <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+        </a>
+    </header>
+
+    <main class="sonic-app">
+
+        <!-- Desktop navbar (>=1024px) -->
+        <nav class="navbar navbar-expand-lg sonic-desktop-nav">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('index') }}">
                     <img src="{{ asset('images/logo.webp') }}" alt="Sonic Towing & Recovery" width="115"
@@ -177,7 +191,7 @@
         </nav>
 
 
-        <section class="hero-section sonic-hero" id="section_1">
+        <section class="hero-section sonic-hero sonic-feed-block sonic-feed-block--hero" id="section_1">
             <div class="hero-media">
                 <div class="video-wrap" aria-hidden="true">
                     <video autoplay muted loop playsinline preload="auto"
@@ -261,7 +275,7 @@
 
 
 
-        <section class="about-section section-padding" id="section_2">
+        <section class="about-section section-padding sonic-feed-block" id="section_2" data-feed-card>
             <div class="container">
                 <div class="row">
 
@@ -287,7 +301,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-12" data-aos="flip-left" data-aos-delay="20000">
+                    <div class="col-lg-6 col-12" data-aos="flip-left" data-aos-delay="200">
                         <div class="about-text-wrap">
                             <img src="{{ asset('./images/artists/new.webp') }}" class="about-image img-fluid"
                                 alt="Sonic Towing & Recovery Vehicle" loading="lazy">
@@ -310,7 +324,7 @@
         </section>
 
         {{-- gallary section --}}
-        <section class="gallary-section section-padding sonic-section-tint" id="section_gallery">
+        <section class="gallary-section section-padding sonic-section-tint sonic-feed-block" id="section_gallery" data-feed-card>
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-12 text-center">
@@ -367,7 +381,7 @@
         {{-- gallary section --}}
 
         <!-- Services Section -->
-        <section class="services-section section-padding sonic-section-tint" id="section_3">
+        <section class="services-section section-padding sonic-section-tint sonic-feed-block" id="section_3" data-feed-card>
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-12 text-center">
@@ -483,7 +497,7 @@
 
 
 
-        <section class="contact-section section-padding" id="section_4">
+        <section class="contact-section section-padding sonic-feed-block" id="section_4" data-feed-card>
             <div class="container">
                 <div class="row">
 
@@ -521,7 +535,7 @@
 
 
 
-        <section class="pricing-section section-padding section-bg" id="section_5">
+        <section class="pricing-section section-padding section-bg sonic-feed-block" id="section_5" data-feed-card>
             <div class="container">
                 <div class="row">
 
@@ -646,6 +660,25 @@
         </section>
 
     </main>
+
+    <!-- Mobile/Tablet bottom navigation (<=1023px) -->
+    <nav class="sonic-app-bottomnav" aria-label="App bottom navigation">
+        <a class="sonic-app-bottomnav__link click-scroll" href="#section_1" aria-label="Home" data-nav-target="section_1">
+            <i class="bi bi-house-door-fill" aria-hidden="true"></i>
+        </a>
+        <a class="sonic-app-bottomnav__link click-scroll" href="#section_2" aria-label="About" data-nav-target="section_2">
+            <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+        </a>
+        <a class="sonic-app-bottomnav__link click-scroll" href="#section_3" aria-label="Services" data-nav-target="section_3">
+            <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+        </a>
+        <a class="sonic-app-bottomnav__link click-scroll" href="#section_gallery" aria-label="Gallery" data-nav-target="section_gallery">
+            <i class="bi bi-images" aria-hidden="true"></i>
+        </a>
+        <a class="sonic-app-bottomnav__link click-scroll" href="#section_4" aria-label="Map and contact" data-nav-target="section_4">
+            <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+        </a>
+    </nav>
 
 
     <footer class="site-footer">
@@ -775,7 +808,7 @@ T e m p l a t e M o
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             AOS.init({
-                duration: 15000,
+                duration: 800,
                 once: true,
             });
         });

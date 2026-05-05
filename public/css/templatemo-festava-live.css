@@ -57,6 +57,178 @@ body {
   font-family: var(--body-font-family);
 }
 
+/*---------------------------------------
+  APP SHELL (Mobile/Tablet <=1023px)
+-----------------------------------------*/
+.sonic-app-topbar,
+.sonic-app-bottomnav {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --sonic-app-topbar-h: 3.75rem;
+    --sonic-app-bottombar-h: 4.25rem;
+  }
+
+  body {
+    background: #f6f8fb;
+  }
+
+  .sonic-desktop-nav {
+    display: none !important;
+  }
+
+  .sonic-app-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 11000;
+    height: var(--sonic-app-topbar-h);
+    padding: calc(env(safe-area-inset-top, 0px) + 0.5rem) 0.9rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    background: rgba(248, 250, 252, 0.88);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+  }
+
+  .sonic-app-topbar__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    text-decoration: none;
+    color: var(--dark-color);
+  }
+
+  .sonic-app-topbar__logo {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+    flex: 0 0 auto;
+    object-fit: cover;
+  }
+
+  .sonic-app-topbar__title {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    font-size: 0.98rem;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sonic-app-topbar__action {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: #fff;
+    background: var(--primary-color);
+    box-shadow: 0 14px 30px rgba(0, 86, 179, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    flex: 0 0 auto;
+  }
+
+  .sonic-app {
+    padding-top: calc(var(--sonic-app-topbar-h) + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(var(--sonic-app-bottombar-h) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .sonic-app-bottomnav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 11000;
+    height: var(--sonic-app-bottombar-h);
+    padding: 0.4rem 0.6rem calc(env(safe-area-inset-bottom, 0px) + 0.4rem);
+    background: rgba(248, 250, 252, 0.9);
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .sonic-app-bottomnav__link {
+    height: 44px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: rgba(15, 23, 42, 0.65);
+    position: relative;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .sonic-app-bottomnav__link i {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .sonic-app-bottomnav__link.active {
+    color: var(--primary-color);
+    background: rgba(0, 86, 179, 0.08);
+  }
+
+  .sonic-app-bottomnav__link.active::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--primary-color);
+  }
+
+  /* Mobile/tablet “feed cards” */
+  .sonic-feed-block[data-feed-card] > .container {
+    background: #ffffff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+  }
+
+  .sonic-feed-block[data-feed-card] {
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+    scroll-margin-top: calc(var(--sonic-app-topbar-h) + env(safe-area-inset-top, 0px) + 14px);
+  }
+
+  .sonic-feed-block[data-feed-card] > .container {
+    width: min(100%, 680px);
+  }
+
+  /* Many existing sections use Bootstrap's .text-white; make it readable on white cards */
+  .sonic-feed-block[data-feed-card] .text-white {
+    color: var(--dark-color) !important;
+  }
+
+  .sonic-feed-block[data-feed-card] p.text-white,
+  .sonic-feed-block[data-feed-card] .text-muted {
+    color: var(--p-color) !important;
+  }
+}
+
 
 /*---------------------------------------
   TYPOGRAPHY               
@@ -1351,7 +1523,7 @@ strong {
 .sonic-preloader {
   position: fixed;
   inset: 0;
-  z-index: 11000;
+  z-index: 12000;
   display: flex;
   align-items: center;
   justify-content: center;
